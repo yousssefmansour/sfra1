@@ -12,6 +12,7 @@
     <option value="2">شفره ا</option> 
     <option value="3">شفره ي</option> 
     <option value="4">شفره المثلثه</option> 
+    <option value="5">الشفره المعكوسه</option> 
     </select><br>
 <input type="text"style="height: 50px; width: 80%;margin-bottom: 20px;font-size:30px;" id="text" placeholder="اكتب هنا" onkeyup="tran();"><br>
 <button style="padding:10px 20px;font-size:30px; display: block;" id ='btn' >clear</button>
@@ -173,7 +174,44 @@ if(text1==1){
  out.innerText=output;
  }
  }
+
+
+
+
+
+
+ if(text1==5){
+   let sfra5=['ا','ب','ت','ث','ج','ح','خ','د'
+   ,'ذ','ر','ز','س','ش','ص','ض','ط','ظ'
+,'ع','غ','ف','ق','ك','ل','م','ن','ه'
+,'و','ي' 
+]
+output="";
+for(i=0;i<text.length;i++){
+   if(sfra5.indexOf(text[i])==-1){
+     output+=text[i];
+   }
+   else{
+      if(sfra5.indexOf(text[i])>13){
+      output+=sfra5[sfra5.indexOf(text[i])-14];
+      }
+      else{
+         output+=sfra5[sfra5.indexOf(text[i])+14];
+      }
+   }
+   out.innerText=output;
+}
+
+}
+
 }   
+
+
+
+
+
+
+
 
 
 
@@ -207,6 +245,11 @@ function myFunction(){
       note.style.display="none";
       key.innerText="333=ي";
    }
+   else if(sfra==5){
+      note.style.display="none";
+      key.innerText="ا=ض";
+   }
+
 
 }
 </script>

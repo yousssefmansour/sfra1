@@ -14,9 +14,11 @@
     <option value="4">شفره المثلثه</option> 
     <option value="5">الشفره المعكوسه</option> 
     <option value="6">الشفره الخطوط</option> 
+   <option value="7">الشفره مورس</option> 
     </select><br>
 <input type="text"style="height: 50px; width: 80%;margin-bottom: 20px;font-size:30px;" id="text" placeholder="اكتب هنا" onkeyup="tran();"><br>
-<button style="padding:10px 20px;font-size:30px; display: block;" id ='btn' >clear</button>
+<button style="padding:10px 20px;font-size:30px; display: inline;" id ='btn' >clear</button>
+<button style="padding:10px 20px;font-size:30px; display: inline;" id ='morse' >ترجم</button>
 <h1 id="output"></h1>
 <h2 style="display: none;" id="sfra6" >اكتب عدد الخطوط اللي بعرض ثم بالطول</h2>
 <h1 style="display: inline;">مفتاح الشفره: </h1>
@@ -29,6 +31,7 @@
 let text1=document.getElementById("sfra").value;
 let text=document.getElementById("text").value;
 let out=document.getElementById('output');
+let morse=document.getElementById("morse");
 let output="";
 
 
@@ -245,6 +248,15 @@ if(text1==6){
 }
 }
 
+
+
+if(text1==7){
+   output="";
+   output+=decodemosre(text);
+   morse.onclick=function(){
+      out.innerText=output;
+};
+}   
 }   
 
 
@@ -264,6 +276,44 @@ document.getElementById("btn").onclick=function clear(){
 
 
 
+function decodemosre(morsecode){
+ var ref ={
+   ".-":"ا",
+   "-...":"ب",
+   "-":"ت",
+   "-.-.":"ث",
+   ".---":"ج",
+   "....":"ح",
+   "---":"خ",
+   "-..":"د",
+   "--..":"ذ",
+   ".-.":"ر",
+   "---.":"ز",
+   "...":"س",
+   "----":"ش",
+   "-..-":"ص",
+   "...-":"ض",
+   "..-":"ط",
+   "-.--":"ظ",
+   ".-.-":"ع",
+   "--.":"غ",
+   "..-.":"ف",
+   "--.-":"ق",
+   "-.-":"ك",
+   ".-..":"ل",
+   "--":"م",
+   "-.":"ن",
+   "..-..":"ه",
+   ".--":"و",
+   "..":"ي"
+ }
+ return morsecode.split('  ').map(
+   a => a .split(' ').map( 
+      b => ref[b]
+   ).join("")
+ ).join(" ");
+}
+console.log(decodemosre("-..."));
 
 
 function myFunction(){
@@ -271,39 +321,50 @@ function myFunction(){
    let note =document.getElementById("note");
    let sfra=document.getElementById("sfra").value;
    let sfra6=document.getElementById("sfra6");
+   let morse=document.getElementById("morse");
    if(sfra==1){
       sfra6.style.display="none";
       note.style.display="none";
+      morse.style.display="none";
       key.innerText="ي1=أ";
    }
    else if(sfra==2){
+      morse.style.display="none";
       sfra6.style.display="none";
       note.style.display="block";
       key.innerText="أ=1";
    }
    else if(sfra==3){
+      morse.style.display="none";
+
       sfra6.style.display="none";
       note.style.display="block";
       key.innerText='ي=1';
    }
    else if(sfra==4){
+      morse.style.display="none";
       sfra6.style.display="none";
       note.style.display="none";
       key.innerText="333=ي";
    }
    else if(sfra==5){
+      morse.style.display="none";
       sfra6.style.display="none";
       note.style.display="none";
       key.innerText="ا=ض";
    }
    else if(sfra==6){
+      morse.style.display="none";
       sfra6.style.display="block";
       note.style.display="none";
       key.innerText="10=ا";
    }
-
-
-
+  else if(sfra==7){
+   morse.style.display="inline";
+   sfra6.style.display="none";
+   note.style.display="none";
+   key.innerText=".-=ا";
+  }
 }
 </script>
 </html>

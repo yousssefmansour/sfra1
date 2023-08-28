@@ -50,7 +50,7 @@
 <h3 style="display: inline;" id="key">ي1=أ</h3> 
 <h3 id="note" style="display: none;">استخدم / كفصاله بين الكلمات</h3>
 <h3>ملحوظه اكتب كل الارقام بانجليزي</h3>
-<div class="copy_right" style="position: fixed;bottom: 10px;right: 50%;  transform: translate(50%,0);font-size: 20px;">  <span style="font-size: 22px;font-family: 'Courier New', Courier, monospace;font-weight: 800;color: #cc4937;">Youssef</span></div>
+ <div class="copy_right" style="position: fixed;bottom: 10px;right: 50%;  transform: translate(50%,0);font-size: 20px;">  <span style="font-size: 25px;font-family: 'Courier New', Courier, monospace;font-weight: 800;color: #cc4937;">Youssef</span></div> 
 </body>
 <script>
     function tran(){
@@ -64,106 +64,27 @@ let output="";
 
 
 if(text1==4){
-output="";
-let sfra4=[[["ا","ب","ت"],["ث","ج",'ح'],['خ','د','ذ']]
-,[['ر','ز','س'],["ش",'ص','ض'],['ط','ظ','ع']],
-[["ف",'ق','ك'],['ل','م',"ن"],['ه','و','ي']]];
-for(i=0;i<text.length;){
-  if(text[i]==" "){
-  output+=" ";
-  out.innerText=output;
-  i++
-  }
- else {
- output+=sfra4[text[i]-1][text[i+1]-1][text[i+2]-1];
- i=i+3;
- out.innerText=output;
+   if(text.value!=" "){
+   out.innerText+="بسبوسه"
+ }
 }
-}
-}
+
 
 
 
 
 if(text1==2){
-   output="";
-   let sfra3=['ا','ب','ت','ث','ج','ح','خ','د'
-   ,'ذ','ر','ز','س','ش','ص','ض','ط','ظ'
-,'ع','غ','ف','ق','ك','ل','م','ن','ه'
-,'و','ي' 
-]
-sfra3=sfra3;
-text = text.trim();
-if(text.search(" ")==-1){
-output+=sfra3[text-1];
-out.innerText=output;
-}
-else{
-for(i=0;i<text.length;){
-   if(text[i]=="/"){
-      output+=" ";
-     i++}
-    else if(text[i]!=' ' && text[i+1]==" "){
-      output+=sfra3[text[i]-1];
-     i=i+2;
-   }
-else if(text[i]!=' ' && text[i+1]!=" " && (i-text.length!=-1)){
-output+=sfra3[text[i] + text[i+1]-1];
-  i=i+3;   
-}
-else if(i-text.length==-1){
-output+= sfra3[text[i]-1];
-i++;
-}
-else{
-i++;
-}
-out.innerText=output;
-}}
+   if(text.value!=""){
+   out.innerText+="بسبوسه"
+ }
 }
 
 
 
 if(text1==3){
-    output="";
-    let sfra3=['ا','ب','ت','ث','ج','ح','خ','د'
-         ,'ذ','ر','ز','س','ش','ص','ض','ط','ظ'
-      ,'ع','غ','ف','ق','ك','ل','م','ن','ه'
-      ,'و','ي' 
-     ]
- sfra3=sfra3.reverse();
- text = text.trim();
- if(text.search(" ")==-1){
-   output+=sfra3[text-1];
-   out.innerText=output;
+   if(text.value!=" "){
+   out.innerText+="بسبوسه"
  }
- else{
-    for(i=0;i<text.length;){
-      
-     if(text[i]=="/"){
-      output+=" ";
-     i++}
-    else if(text[i]!=' ' && text[i+1]==" "){
-      output+=sfra3[text[i]-1];
-     i=i+2;
-    }
-    else if(text[i]=="/"){
-    output+=" ";
-   i++
-    }
-    else if(text[i]!=' ' && text[i+1]!=" " && (i-text.length!=-1)){
-      output+=sfra3[text[i] + text[i+1]-1];
-        i=i+3;   
-    }
-    else if(i-text.length==-1){
-      output+= sfra3[text[i]-1];
-     i++;
-    }
-    else{
-    i++;
-    }
-    out.innerText=output;
- }}
 }
 
 
@@ -173,36 +94,8 @@ if(text1==3){
 
 
 if(text1==1){
- output="";
- let a =['ا','ب','ت','ث','ج','ح','خ'];
- let b =['د','ذ','ر','ز','س','ش','ص'];
- let c =['ض','ط','ظ','ع','غ','ف','ق'];
- let d =['ك','ل','م','ن','ه','و','ي'];
- for(i=0;i<text.length;){
- if(text[i]=='ي'){
- output+=a[text[i+1]-1];
- i=i+2
-  } 
- else if(text[i]=='س'){
-    output+=b[text[i+1]-1];
-    i=i+2
- }   
- else if(text[i]=='و'){
-    output+=c[text[i+1]-1];
-    i=i+2
- }   
- else if(text[i]=='ع'){
-    output+=d[text[i+1]-1];
-    i=i+2;
- } 
- else if(text[i]==" "){
- output+=" ";
- i++;
- }
- else{
-   i++
- }
- out.innerText=output;
+   if(text.value!=" "){
+   out.innerText+="بسبوسه"
  }
  }
 
@@ -212,76 +105,26 @@ if(text1==1){
 
 
  if(text1==5){
-   let sfra5=['ا','ب','ت','ث','ج','ح','خ','د'
-   ,'ذ','ر','ز','س','ش','ص','ض','ط','ظ'
-,'ع','غ','ف','ق','ك','ل','م','ن','ه'
-,'و','ي' 
-]
-output="";
-for(i=0;i<text.length;i++){
-   if(sfra5.indexOf(text[i])==-1){
-     output+=text[i];
-   }
-   else{
-      if(sfra5.indexOf(text[i])>13){
-      output+=sfra5[sfra5.indexOf(text[i])-14];
-      }
-      else{
-         output+=sfra5[sfra5.indexOf(text[i])+14];
-      }
-   }
-   out.innerText=output;
-}
-
+   if(text.value!=" "){
+   out.innerText+="بسبوسه"
+ }
 }
 
 if(text1==6){
-   output="";
- for(i=0;i<text.length;){
-   if(text[i]==" "){
-      output+=" ";
-      i++;
-    }
-    if(text[i]=="1"){
-    let a=["ا","ب","ت","ث","ج","ح"];
-    output+=a[text[i+1]];
-    i=i+2;
-    }
-    else if(text[i]=="2"){
-   let b=["خ","د","ذ","ر","ز","س"];
-   output+=b[text[i+1]];
-    i=i+2;
-    }
-    else if(text[i]=="3"){
-   let c=["ش","ص","ض","ط","ظ","ع"]; 
-   output+=c[text[i+1]];
-    i=i+2;
-    }
-    else if(text[i]=="4"){
-    let d=["غ","ف","ق","ك","ل","م"]; 
-    output+=d[text[i+1]];
-    i=i+2;
-    }
-    else if(text[i]=="5"){
-    let f=["ن","ه","و","ي"]; 
-    output+=f[text[i+1]];
-    i=i+2;
-    }
-    else{
-      i++;
-    }
-    out.innerText=output;
+   if(text.value!=" "){
+   out.innerText+="بسبوسه"
+ }
+
 }
-}
+
 
 
 
 if(text1==7){
-   output="";
-   output+=decodemosre(text);
-   morse.onclick=function(){
-      out.innerText=output;
-};
+   if(text.value!=" "){
+   out.innerText+="بسبوسه"
+ }
+
 }   
 }   
 
